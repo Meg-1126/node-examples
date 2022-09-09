@@ -1,2 +1,9 @@
-# GET http://localhost:3000/users
-# Content-Type: application/json
+GET http://localhost:3000/readFile
+Content-Type: application/json
+
+###
+
+POST http://localhost:3000/appendFile
+Content-Type: application/json
+
+ { "name": "Yuto", "country": "Japan" }
