@@ -1,7 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-
 const server = express();
 
 const logger = (req, res, next) => {
