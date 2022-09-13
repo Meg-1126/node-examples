@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1><%= title %></h1>
+  <ul>
+    <% pets.forEach(pet => {%>
+      <% if (editId != pet.id) { %>
+       <li>Id: <%= pet.id %>, Name: <%= pet.name %>, Age: <%= pet.age %>, Type: <%= pet.type %></li> 
+       <% } else if (editId == pet.id) { %>
+        <li>Id:  <%= pet.id %></li>
+        <form method="POST" action="/edit/:id">
+          <label for="name">Name:</label>
+          <input type="text" name="name" value="<%= pet.name %>">
+          <label for="age">Age:</label>
+          <input type="number" name="age" value="<%= pet.age %>">
+          <label for="type">Type:</label>
+          <input type="text" name="type" value="<%= pet.type %>">
+          <input type="submit">
+        </form>
+      <% } %>
+    
+      <% }) %>
+       
+  </ul>
+  <h2>Add New Pets</h2>
+  <form method="POST" action="/new">
+    <label for="name">Name:</label>
+    <input type="text" name="name">
+    <label for="age">Age:</label>
+    <input type="number" name="age">
+    <label for="type">Type:</label>
+    <input type="text" name="type">
+    <input type="submit">
+  </form>
+</body>
+</html>
